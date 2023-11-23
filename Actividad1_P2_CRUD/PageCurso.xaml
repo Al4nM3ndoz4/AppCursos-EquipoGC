@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad1_P2_CRUD.PageCurso">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Image Source="logo.png"
+                   WidthRequest="50"
+                   HeightRequest="100" />
+            <Frame Margin="8" VerticalOptions="FillAndExpand" CornerRadius="10">
+            <StackLayout>
+                    <Label Text="Nuevo Curso" 
+                           FontSize="Large"
+                           FontAttributes="Bold"/>
+                    <Entry IsVisible="false" />
+                    <Entry Placeholder="Nombre Curso" x:Name="txtNombreCurso"/>
+                    <Entry Placeholder="Tipo Curso" x:Name="txtTipo"/>
+                    <Entry Placeholder="Duracion (hrs)" 
+                           Keyboard="Numeric"
+                           x:Name="txtDuracion"
+                           />
+                    <Button Text="Crear Curso"
+                            FontSize="16"
+                            x:Name="btnAltaCurso"
+                            BackgroundColor="#7ED957"
+                            CornerRadius="15"
+                            CharacterSpacing="2"
+                            TextColor="White"
+                            HorizontalOptions="CenterAndExpand"
+                            HeightRequest="50"
+                            WidthRequest="300" 
+                            Margin="20"
+                            Clicked="btnAltaCurso_Clicked"/>
+                </StackLayout>
+        </Frame>
+       </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

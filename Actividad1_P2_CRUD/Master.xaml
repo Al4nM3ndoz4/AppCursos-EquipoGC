@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad1_P2_CRUD.Master"
+             Title="Master">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="EMPLEADOS"
+                    BackgroundColor="#E9E9E9" 
+                    CornerRadius="10"
+                    Margin="15"
+                    x:Name="btnEmpleado"
+                    Clicked="btnEmpleado_Clicked"/>
+            <Button Text="CURSOS"
+                    BackgroundColor="#E9E9E9"
+                    CornerRadius="10"
+                    Margin="15"
+                    x:Name="btnCursos"
+                    Clicked="btnCursos_Clicked" />
+            <Button Text="SEGUIMIENTOS"
+                    BackgroundColor="#E9E9E9"
+                    CornerRadius="10"
+                    Margin="15"
+                    x:Name="btnSeguimiento"
+                    Clicked="btnSeguimiento_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

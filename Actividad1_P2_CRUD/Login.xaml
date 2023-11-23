@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad1_P2_CRUD.Login">
+    <ContentPage.Content>
+        <StackLayout Padding="40" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Spacing="30" >
+            <Label Text="App de Cursos"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+               TextColor="Black"
+                  FontAttributes="Bold"
+                   FontSize="35"
+                   />
+            <Image Source="logo.png"
+                   WidthRequest="100"
+                   />
+            <Entry Placeholder="Correo electronico"
+                   x:Name="txtEmail"
+                   TextColor="Black"
+                   PlaceholderColor="Gray" />
+            <Entry Placeholder="Contraseña"
+                   x:Name="txtPasswordLog"
+                   TextColor="Black"
+                   IsPassword="True"
+                   PlaceholderColor="Gray" />
+            <Button Text="INICIAR SESIÓN"
+                    x:Name="btn_Login"
+                    BackgroundColor="#0097CE"
+                    BorderColor="#007EA7"
+                    BorderWidth="1"
+                    CornerRadius="10"
+                    TextColor="White"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="300"
+                    HeightRequest="45"
+                    CharacterSpacing="1"
+                    Clicked="btn_Login_Clicked"/>
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="¿Olvidaste tu constraseña?"
+                              TextColor="Gray"
+                              TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                <Frame HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent">
+            <Button Text="CREAR CUENTA NUEVA"
+                    BackgroundColor="#3DD967"
+                    BorderColor="#2B9447"
+                    x:Name="btn_registro"
+                    BorderWidth="1"
+                    CornerRadius="20"
+                    TextColor="White"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="300"
+                    HeightRequest="40"
+                    CharacterSpacing="1"
+                    Clicked="btn_registro_Clicked"/>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

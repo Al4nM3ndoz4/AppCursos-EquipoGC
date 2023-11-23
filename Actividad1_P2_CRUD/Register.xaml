@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad1_P2_CRUD.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="25" RowDefinitions="Auto, Auto, Auto, Auto">
+                <StackLayout Grid.Row="4">
+                    <Image Source="logo.png" 
+                           HorizontalOptions="Center"
+                           HeightRequest="100"/>
+                    <Frame BorderColor="Gray"
+                           BackgroundColor="Transparent"
+                           Margin="15"
+                           Padding="0"
+                           CornerRadius="10">
+                        <Frame 
+                               BackgroundColor="Transparent"
+                               Margin="1"
+                               Padding="25,0,25,0"
+                               HeightRequest="60"
+                               CornerRadius="10">
+                            <Entry TextColor="Black"
+                                   FontSize="18"
+                                   x:Name="txtNombre"
+                                   Placeholder="Nombre Completo"
+                                   PlaceholderColor="Gray" />
+                        </Frame>
+                    </Frame>
+                    <Frame BorderColor="Gray"
+                           BackgroundColor="Transparent"
+                           Margin="15"
+                           Padding="0"
+                           CornerRadius="10">
+                        <Frame BackgroundColor="Transparent"
+                               Margin="1"
+                               Padding="25,0,25,0"
+                               HeightRequest="60"
+                               CornerRadius="20">
+                            <Entry TextColor="Black"
+                                   FontSize="18"
+                                   Placeholder="Correo"
+                                   PlaceholderColor="Gray"
+                                   x:Name="txtCorreo"/>
+                        </Frame>
+                    </Frame>
+                    <Frame BorderColor="Gray"
+                           BackgroundColor="Transparent"
+                           Margin="15"
+                           Padding="0"
+                           CornerRadius="10">
+                        <Frame BackgroundColor="Transparent"
+                               Margin="1"
+                               Padding="25,0,25,0"
+                               HeightRequest="60"
+                               CornerRadius="20">
+                            <Entry TextColor="Black"
+                                   FontSize="18"
+                                   Placeholder="Edad"
+                                   x:Name="txtEdad"
+                                   PlaceholderColor="Gray" />
+                        </Frame>
+                    </Frame>
+                    <Frame BorderColor="Gray"
+                           BackgroundColor="Transparent"
+                           Margin="15"
+                           Padding="0"
+                           CornerRadius="10">
+                        <Frame BackgroundColor="Transparent"
+                               Margin="1"
+                               Padding="25,0,25,0"
+                               HeightRequest="60"
+                               CornerRadius="20">
+                            <Entry TextColor="Black"
+                                   FontSize="18"
+                                   x:Name="txtPassword"
+                                   Placeholder="Contraseña"
+                                   IsPassword="True"
+                                   PlaceholderColor="Gray" />
+                        </Frame>
+                    </Frame>
+                    <Frame BackgroundColor="Transparent">
+                        <Button Text="Registrarse"
+                            x:Name="btn_Registro"
+                            CornerRadius="10"
+                            BackgroundColor="#3DD967"
+                            FontSize="Small"
+                            FontAttributes="Bold"
+                            CharacterSpacing="2"
+                            Clicked="btn_Registro_Clicked"></Button> 
+                    </Frame>
+                </StackLayout>
+            </Grid>  
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

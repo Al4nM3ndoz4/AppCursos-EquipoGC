@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad1_P2_CRUD.MainPage">
+    <ContentPage Title="Empleados"
+                 IconImageSource="empleado.png">
+        <StackLayout Padding="10">
+            <Image x:Name="Foto"
+                   Source="usuario.png"
+                   WidthRequest="50"
+                   HeightRequest="100" />
+            <Frame>
+                <StackLayout>
+                    <Label Text="Mi perfil"
+                           FontSize="Large"
+                           TextColor="Black"
+                           Padding="5" />
+                    <Entry x:Name="txtIdEmp"
+                           IsVisible="false" />
+                    <Entry Placeholder="Nombre(s)"
+                           PlaceholderColor="Gray"
+                           x:Name="txtNombre" />
+                    <Entry Placeholder="Apellido Paterno"
+                           PlaceholderColor="Gray"
+                           x:Name="txtApellidoP" />
+                    <Entry Placeholder="Apellido Materno"
+                           PlaceholderColor="Gray"
+                           x:Name="txtApellidoM" />
+                    <Entry Placeholder="Edad"
+                           PlaceholderColor="Gray"
+                           x:Name="txtEdad"
+                           Keyboard="Numeric" />
+                    <Entry Placeholder="Telefono"
+                           PlaceholderColor="Gray"
+                           x:Name="txtTelefono"
+                           Keyboard="Numeric" />
+                    <Button Text="Guardar Informacion"
+                            x:Name="btnGuardar"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#7ED957"
+                            CornerRadius="15"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            TextColor="White"
+                            HorizontalOptions="CenterAndExpand"
+                            HeightRequest="50"
+                            WidthRequest="300"
+                            Margin="20" />
+                    <Button x:Name="tomarFoto" 
+                            Text="Tomar Foto"
+                            CornerRadius="15"
+                            BackgroundColor="#7ED957"
+                            CharacterSpacing="1"
+                            HorizontalOptions="CenterAndExpand"
+                            HeightRequest="50"
+                            WidthRequest="300"
+                            Clicked="tomarFoto_Clicked"/>
+                    <Button Text="Actualizar"
+                            x:Name="btnActualizar"
+                            Clicked="Button_Actualizar_Clicked"
+                            IsVisible="False"
+                            CornerRadius="15"
+                            BackgroundColor="#00B9FF"
+                            FontAttributes="Bold"
+                            FontSize="15" />
+                    <Button Text="Eliminar"
+                            x:Name="btnEliminar"
+                            Clicked="Button_Eliminar_Clicked"
+                            CornerRadius="10"
+                            BackgroundColor="red"
+                            IsVisible="False"
+                            FontAttributes="Bold"
+                            FontSize="15" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage>
+    <!--Pestaña para ver los empleados dados de alta--> 
+    <ContentPage Title="Lista" IconImageSource="editar.png">
+        <ListView x:Name="lsEmpleado"
+                  ItemSelected="lsEmpleado_ItemSelected"
+                  IsVisible="true"
+                  RowHeight="100"
+                  WidthRequest="400">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="0.80*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="ID"
+                                   Grid.Row="0"
+                                   Grid.Column="0" />
+                            <Label Text="Empleado"
+                                   Grid.Row="0"
+                                   Grid.Column="1" />
+                            <Label Text="Apellido P"
+                                   Grid.Row="0"
+                                   Grid.Column="2" />
+                            <Label Text="Apellido M"
+                                   Grid.Row="0"
+                                   Grid.Column="3" />
+                            <Label Text="Edad"
+                                   Grid.Row="0"
+                                   Grid.Column="4" />
+                            <Label Text="Telefono"
+                                   Grid.Row="0"
+                                   Grid.Column="5" />
+                            <Label Text="{Binding IdEmp}"
+                                   Grid.Row="1"
+                                   Grid.Column="0"
+                                   TextColor="Blue" />
+                            <Label Text="{Binding Nombre}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   TextColor="Gray" />
+                            <Label Text="{Binding ApellidoPaterno}"
+                                   Grid.Row="1"
+                                   Grid.Column="2"
+                                   TextColor="Gray" />
+                            <Label Text="{Binding ApellidoMaterno}"
+                                   Grid.Row="1"
+                                   Grid.Column="3"
+                                   TextColor="Gray" />
+                            <Label Text="{Binding Edad}"
+                                   Grid.Row="1"
+                                   Grid.Column="4"
+                                   TextColor="Green"
+                                   FontAttributes="Italic" />
+                            <Label Text="{Binding Telefono}"
+                                   Grid.Row="1"
+                                   Grid.Column="5"
+                                   TextColor="Orange"
+                                   FontAttributes="Italic" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+</TabbedPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad1_P2_CRUD.Detail">
+    <ContentPage.Content>
+        <Grid ColumnDefinitions="*, Auto"
+              RowDefinitions="Auto, Auto, 0.75*, 0*, Auto"
+              HorizontalOptions="Center"
+              Margin="10">
+            <Image Source="logo.png"
+                   Grid.Row="4"
+                   Grid.Column="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   WidthRequest="70" />
+            <Label Text="App Cursos"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   TextColor="Black" />
+            <Label Text="¡Bienvenido!"
+                   Grid.Row="5"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   FontSize="25"
+                   FontFamily="Open Sans"
+                   TextColor="Black"
+                   TextTransform="Uppercase"
+                   TextDecorations="Underline" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

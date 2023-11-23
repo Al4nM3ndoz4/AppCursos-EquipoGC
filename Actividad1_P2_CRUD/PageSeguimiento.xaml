@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad1_P2_CRUD.PageSeguimiento">
+    <ContentPage Title="Cursos" IconImageSource="curso.png">
+        <StackLayout Spacing="0.5">
+            <Image Source="logo.png"
+                   HorizontalOptions="Center"
+                   HeightRequest="100" 
+                   Margin="10"/>
+            <Entry x:Name="txtId"
+                   IsVisible="false" 
+                   IsEnabled="False"
+                   WidthRequest="100"/>
+            <Entry x:Name="txtIdEmp"
+                   IsReadOnly="True"
+                   HorizontalOptions="Center"
+                   WidthRequest="30"
+                   VerticalOptions="Center" />
+            <Picker Title="Empleado"
+                    TextColor="Gray"
+                    FontSize="20"
+                    x:Name="txtNombre"
+                    SelectedIndexChanged="TxtNombre_SelectedIndexChanged" />
+            <Picker Title="Curso"
+                    FontSize="20"
+                    x:Name="txtCurso" />
+            <Entry x:Name="txtLugar"
+                   Placeholder="Lugar del curso" 
+                   FontSize="20"
+                   PlaceholderColor="Gray"/>
+            <DatePicker x:Name="txtFecha" />
+            <TimePicker x:Name="txtHora" />
+            <Picker x:Name="pickerEstatus"
+                    Title="Estatus"
+                    FontSize="20">
+                <Picker.Items>
+                    <x:String>Programado</x:String>
+                    <x:String>En Progreso</x:String>
+                    <x:String>Completo</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="txtCalificacion"
+                   Placeholder="Calificacion" 
+                   PlaceholderColor="Gray"
+                   FontSize="20"/>
+            <Grid ColumnDefinitions="*,*,*" RowDefinitions="20" Margin="10">
+            <Button x:Name="BtnGuardarSeguimiento"
+                    Text="Guardar Seguimiento"
+                    BackgroundColor="#3DD967"
+                    BorderColor="#2B9447"
+                    BorderWidth="1"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    CornerRadius="20"
+                    TextColor="White"
+                    HeightRequest="100"
+                    CharacterSpacing="1"
+                    Clicked="BtnGuardarSeguimiento_Clicked" />
+            <Button x:Name="BtnActualizar"
+                    Text="Actualizar"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    BackgroundColor="#0097B2"
+                    BorderWidth="1"
+                        BorderColor="#007EA7"
+                        CornerRadius="20"
+                        TextColor="White"
+                        HeightRequest="100"
+                        CharacterSpacing="1"
+                        Clicked="BtnActualizar_Clicked"
+                    IsVisible="false" />
+            <Button x:Name="BtnTerminar"
+                    Text="Terminar Curso"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                        BackgroundColor="#DB1252"
+                        CornerRadius="20"
+                        TextColor="White"
+                        HeightRequest="100"
+                        CharacterSpacing="1"
+                        Clicked="BtnTerminar_Clicked"
+                    IsVisible="false" />
+            </Grid>
+        </StackLayout>
+        </ContentPage >
+        <ContentPage Title="Mis Cursos" IconImageSource="biblioteca.png">
+            <ListView x:Name="lstSeguimiento"
+                      ItemSelected="lstSeguimiento_ItemSelected" RowHeight="100" WidthRequest="400">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                            <Label Text="ID" 
+                                   Grid.Row="0"
+                                   Grid.Column="0"/>
+                            <Label Text="Empleado" 
+                                   Grid.Row="0"
+                                   Grid.Column="1"/>
+                            <Label Text="Curso" 
+                                   Grid.Row="0"
+                                   Grid.Column="2"/>
+                            <Label Text="Lugar"
+                                   Grid.Row="0"
+                                   Grid.Column="3" />
+                            <Label Text="Fecha"
+                                   Grid.Row="0"
+                                   Grid.Column="4"/>
+                            <Label Text="Hora"
+                                   Grid.Row="0" 
+                                   Grid.Column="5"/>
+                            <Label Text="Status"
+                                   Grid.Row="0" 
+                                   Grid.Column="6"/>
+                            <Label Text="Promedio"
+                                   Grid.Row="0"
+                                   Grid.Column="7" />
+                            <Label Text="{Binding IdEmpleado}"
+                                       Grid.Row="1"
+                                       Grid.Column="0"
+                                       TextColor="Blue" />
+                                <Label Text="{Binding NombreDelEmpleado}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       TextColor="Gray" />
+                                <Label Text="{Binding NombreDelCurso}"
+                                       Grid.Row="1"
+                                       Grid.Column="2"
+                                       TextColor="Blue" />
+                                <Label Text="{Binding LugarDelCurso}"
+                                       Grid.Row="1"
+                                       Grid.Column="3"
+                                       TextColor="Blue" />
+                                <Label Text="{Binding Fecha}"
+                                       Grid.Row="1"
+                                       Grid.Column="4"
+                                       TextColor="Orange" />
+                                <Label Text="{Binding Hora}"
+                                       Grid.Row="1"
+                                       Grid.Column="5"
+                                       TextColor="Green" />
+                                <Label Text="{Binding Estatus}"
+                                       Grid.Row="1"
+                                       Grid.Column="6"
+                                       TextColor="Red" />
+                                <Label Text="{Binding Calificacion}"
+                                       Grid.Row="1"
+                                       Grid.Column="7"
+                                       TextColor="Red" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage>
+</TabbedPage>
